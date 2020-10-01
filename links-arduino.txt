@@ -1,0 +1,130 @@
+GUI {
+    GUISlice
+        https://github.com/ImpulseAdventure/GUIslice
+    GUISlice builder
+        https://github.com/ImpulseAdventure/GUIslice-Builder
+    Adafruit GFX Library
+        https://learn.adafruit.com/adafruit-gfx-graphics-library/overview
+    Arduino Touchscreen Info
+        https://dronebotworkshop.com/touchscreen-arduino/
+}
+
+RaspPi & Arduino {
+    Comparison
+        https://diyi0t.com/raspberry-pi-vs-arduino-comparison/
+    Serial communication
+        https://diyi0t.com/arduino-to-raspberry-pi-serial-communication/
+    Pi Headless
+        https://diyi0t.com/raspberry-pi-headless-setup-tutorial/
+    wpa_supplicant.conf
+        https://www.systutorials.com/docs/linux/man/5-wpa_supplicant.conf/
+        https://raspberrytips.com/raspberry-pi-wifi-setup/
+}
+
+Projects {
+    Arduino Grove Greenhouse
+        https://www.instructables.com/id/Arduino-Grove-Greenhouse/
+    Seeed Grove Smart Plant Care Kit
+        https://www.seeedstudio.com/Grove-Smart-Plant-Care-Kit-for-Arduino.html
+    TFT LCD Touch Screen
+        https://howtomechatronics.com/tutorials/arduino/arduino-tft-lcd-touch-screen-tutorial/
+}
+
+Beginnner Seeed lessons {
+    https://wiki.seeedstudio.com/Grove-Beginner-Kit-For-Arduino/
+    Seeed
+        https://wiki.seeedstudio.com/
+        https://github.com/Seeed-Studio
+}
+
+Python {
+    File write
+        https://www.w3schools.com/python/python_file_write.asp
+    pySerial
+        https://pythonhosted.org/pyserial/
+    datetime
+        https://www.tutorialspoint.com/How-to-print-current-date-and-time-using-Python
+    open
+        https://www.programiz.com/python-programming/methods/built-in/open
+    string matches
+        https://stackoverflow.com/questions/19300020/python-match-a-string-with-regex
+}
+
+Code ref. {
+    https://www.arduino.cc/reference/en/
+    https://www.arduino.cc/en/Reference/HomePage
+    https://www.arduino.cc/en/Tutorial/Variables
+    https://www.arduino.cc/en/Reference/FunctionDeclaration
+    https://www.arduino.cc/en/Guide/Libraries
+    Color hex
+        https://www.color-hex.com/color/800080
+}
+
+12C {
+    12C
+        https://wiki.seeedstudio.com/Arduino_Software_I2C_user_guide/
+    Arduino Software I2C
+        https://github.com/Seeed-Studio/Arduino_Software_I2C   
+}
+
+IDE ref. {
+    https://www.arduino.cc/en/Guide/Environment 
+}
+
+Libs {
+    https://www.arduino.cc/en/Reference/Libraries
+    https://www.arduino.cc/en/Guide/Libraries
+    https://www.arduino.cc/en/Hacking/LibraryTutorial
+    u8g2
+        https://github.com/olikraus/u8g2
+    Grove LCD RGB Backlight
+        https://github.com/SeeedDocument/Grove_LCD_RGB_Backlight
+}
+
+Grove Hardware {
+    OLED SSD1315
+        https://wiki.seeedstudio.com/Grove-OLED-Display-0.96-SSD1315/
+    LCD RGB Backlight
+        https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/
+    SHT31
+        https://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/
+}
+
+Other hardware {
+    VTX 400
+        http://vortexpowerfans.com/vtx-400
+    Vicks humidifer
+        https://www.vickshumidifiers.com/vicks/shop/humidifiers/vicks-mini-filter-free-cool-mist-humidifier
+}
+
+IoT Cxn {
+    https://blynk.io/en/getting-started
+}
+
+Forums {
+    https://arduino.stackexchange.com/
+}
+
+Shields {
+    https://playground.arduino.cc/Main/ArduinoCoreHardware/#Shields
+    https://playground.arduino.cc/Main/ShieldPinUsage/
+}
+
+Pins {
+    https://playground.arduino.cc/Main/ArduinoPinCurrentLimitations/
+    https://www.arduino.cc/en/Tutorial/DigitalPins
+    https://www.arduino.cc/en/Tutorial/AnalogInputPins
+    https://www.arduino.cc/en/Tutorial/PWM
+    https://www.arduino.cc/en/Tutorial/Memory
+}
+
+ITP electronics guides {
+    https://itp.nyu.edu/physcomp/lessons/electronics/
+    https://itp.nyu.edu/physcomp/lessons/sensors-the-basics/
+    https://itp.nyu.edu/physcomp/lessons/serial-communication/
+    https://itp.nyu.edu/physcomp/lessons/dc-motors/
+}
+
+Sound {
+    arduino.cc/frequencies
+}
