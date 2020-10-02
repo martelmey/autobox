@@ -2,3 +2,8 @@
 *.tar*
 *.exe
 *.pdf
+*.ppk
+*.pem
+*_ssh
+*_priv
+*_pub

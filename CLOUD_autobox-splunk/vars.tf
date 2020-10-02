@@ -5,9 +5,9 @@ variable "AWS_SECRET_KEY" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "autobox-key"
+  default = "autobox-key.pem"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "autobox-key.pub"
+  default = "autobox-key"
 }

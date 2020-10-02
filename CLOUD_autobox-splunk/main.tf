@@ -63,41 +63,34 @@ resource "aws_security_group" "autobox-sg" {
 resource "aws_instance" "autobox-splunk01" {
   connection {
     type = "ssh"
-    user = "ec2user"
+    user = "ec2-user"
     private_key = file(var.PATH_TO_PRIVATE_KEY)
     host = self.public_ip
   }
   instance_type = "t2.medium"
   ami = "ami-098f16afa9edf40be"
-  key_name = file(var.PATH_TO_PUBLIC_KEY)
+  key_name = "autobox-key"
   vpc_security_group_ids = [aws_security_group.autobox-sg.id]
   subnet_id = aws_subnet.autobox-01.id
   provisioner "remote-exec" {
     inline = [
-      "sudo yum update",
+      "sudo yum -y update",
       "sudo yum -y upgrade",
       "sudo yum -y install wget",
-      "sudo systemctl enable --now firewalld",
-      "sudo firewall-cmd --permanent --add-port=8000/tcp",
-      "sudo firewall-cmd --permanent --add-port=8088/tcp",
-      "sudo firewall-cmd --permanent --add-port=8089/tcp",
-      "sudo firewall-cmd --permanent --add-port=9997/tcp",
-      "sudo systemctl restart firewalld",
       "sudo useradd splunk -d /home/splunk",
       "sudo usermod -a -G root,wheel splunk",
-      "sudo sed -i 's@PATH=$PATH:$HOME/.local/bin:$HOME/bin@PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/splunk/bin@g' /home/splunk/.bash_profile",
+      "sudo echo 'PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/splunk/bin' >> /home/splunk/.bash_profile",
       "sudo chown --recursive splunk:splunk /home/splunk/",
       "sudo wget -O splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.0.6&product=splunk&filename=splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz&wget=true'",
       "sudo tar -zxvf splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz -C /opt",
       "sudo touch /opt/splunk/etc/system/local/user-seed.conf",
-      "sudo (echo '[user_info]' echo 'USERNAME = splunkadmin' echo 'PASSWORD = hialplissplunk')>/opt/splunk/etc/system/local/user-seed.conf",
+      "sudo echo '[user_info]' >> /opt/splunk/etc/system/local/user-seed.conf",
+      "sudo echo 'USERNAME = splunkadmin' >> /opt/splunk/etc/system/local/user-seed.conf",
+      "sudo echo 'PASSWORD = ' >> /opt/splunk/etc/system/local/user-seed.conf",
       "sudo touch /opt/splunk/etc/splunk-launch.conf",
-      "(echo 'SPLUNK_SERVER_NAME=Splunkd' echo 'SPLUNK_OS_USER=splunk' echo 'SPLUNK_HOME=/opt/splunkforwarder')>/opt/splunk/etc/splunk-launch.conf",
-      "chown --recursive splunk:splunk /opt/splunk/",
-      "sudo /opt/splunk/bin/./splunk start --answer-yes --accept-license",
-      "sudo /opt/splunk/bin/./splunk enable boot-start -user splunk",
-      "sudo /opt/splunk/bin/./splunk enable listen 9997",
-      "sudo /opt/splunk/bin/./splunk start"
+      "sudo echo 'SPLUNK_SERVER_NAME=Splunkd' >> /opt/splunk/etc/splunk-launch.conf",
+      "sudo echo 'SPLUNK_OS_USER=splunk' >> /opt/splunk/etc/splunk-launch.conf",
+      "sudo echo 'SPLUNK_HOME=/opt/splunk' >> /opt/splunk/etc/splunk-launch.conf"
     ]
   }
     tags = {
