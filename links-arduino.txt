@@ -19,6 +19,10 @@ RaspPi & Arduino {
     wpa_supplicant.conf
         https://www.systutorials.com/docs/linux/man/5-wpa_supplicant.conf/
         https://raspberrytips.com/raspberry-pi-wifi-setup/
+    Pi VNC
+        https://www.raspberrypi.org/documentation/remote-access/vnc/
+    Pi SSH
+        https://www.raspberrypi.org/documentation/remote-access/ssh/
 }
 
 Projects {
