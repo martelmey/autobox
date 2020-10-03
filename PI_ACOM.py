@@ -3,7 +3,7 @@ import datetime
 ser = serial.Serial('/dev/ttyACM0',9600)
 while True:
 	now = datetime.datetime.now()
-	log = open("logTempHumH2o", "a")
+	log = open("autobox-log/logTempHumH2o", "a")
 	read_serial=ser.readline()
 
 	print(now.strftime('%H:%M:%S on %A %B %d'))

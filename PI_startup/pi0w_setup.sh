@@ -51,7 +51,7 @@ touch /opt/splunkforwarder/etc/system/local/user-seed.conf
     echo '[user_info]'
     echo 'USERNAME = splunkadmin'
     echo 'PASSWORD = '
-)>/opt/splunkforwader/etc/system/local/user-seed.conf
+)>/opt/splunkforwarder/etc/system/local/user-seed.conf
 touch /opt/splunkforwarder/etc/splunk-launch.conf
 (
     echo 'SPLUNK_SERVER_NAME=Splunkd'
@@ -66,7 +66,22 @@ echo 'PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/splunkforwarder/bin' >> /home/s
 source /home/splunk/.bash_profile
 chown --recursive splunk:splunk /home/splunk/
 chown --recursive splunk:splunk /opt/splunkforwarder/
+(
+    echo "[monitor:///root/logTempHumH2o]"
+    echo "whitelist = logTempHumH2o*"
+    echo "index = autobox"
+)>>/opt/splunkforwarder/etc/system/local/inputs.conf
 su - splunk -c 'splunk start --accept-license --answer-yes'
 su - splunk -c 'splunk add forward-server 54.224.223.190:9997'
-su - splunk -c 'splunk add deploy-poll 54.224.223.190:8089'
-###splunk inputs
+su - splunk -c 'splunk set deploy-poll 54.224.223.190:8089'
+
+###ARDUINO IDE
+wget -O arduino-1.8.13-linuxarm.tar.xz 'https://www.arduino.cc/download_handler.php?f=/arduino-1.8.13-linuxarm.tar.xz'
+tar -zxvf arduino-1.8.13-linuxarm.tar.xz -C /opt
+chmod +x /opt/arduino-1.8.13/install.sh
+sudo ./opt/arduino-1.8.13/install.sh
+git clone https://github.com/martelmey/autobox.git
+
+###PI_ACOMM
+mkdir /root/autobox-log
+touch /root/autobox-log/logTempHumH2o
