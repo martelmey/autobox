@@ -35,3 +35,9 @@ chown --recursive splunk:splunk /opt/splunk/
 /opt/splunk/bin/./splunk start --answer-yes --accept-license
 /opt/splunk/bin/./splunk enable boot-start -user splunk
 /opt/splunk/bin/./splunk enable listen 9997
+###extra drive
+mkfs -t xfs /dev/xvdf
+mkdir /splunk-indexes
+mount /dev/xvdf /splunk-indexes
+cp /etc/fstab /etc/fstab.old
+echo "UUID=547c8899-69ce-469a-8768-d3ee75b59f33  /splunk-indexes  xfs  defaults,nofail  0  2" >> /etc/fstab

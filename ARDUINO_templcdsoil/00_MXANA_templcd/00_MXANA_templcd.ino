@@ -11,8 +11,10 @@ const int colorG = 37;
 const int colorB = 248;
 int soilMoisturePin0 = A0;
 int soilMoisturePin1 = A1;
+int soilMoisturePin2 = A2;
 int soilMoistureValue0 = 0;
 int soilMoistureValue1 = 0;
+int soilMoistureValue2 = 0;
 
 void setup() {
     Serial.begin(9600);
@@ -45,6 +47,11 @@ void loop() {
     Serial.print("\nPlant2 = ");
     Serial.print(soilMoistureValue1);
     delay(1000);
+    lcd.clear();
+    soilMoistureValue2 = analogRead(soilMoisturePin2);
+    Serial.print("Plant3 = ");
+    Serial.print(soilMoistureValue2);
+    delay(1000);
     // print temp&hum to lcd
     lcd.clear();
     lcd.setCursor(0, 0);
@@ -62,5 +69,10 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print("Plant2 H2O: ");
     lcd.print(soilMoistureValue1);
+    delay(1000);
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Plant3 H2O: ");
+    lcd.print(soilMoistureValue2);
     delay(1000);
 }
