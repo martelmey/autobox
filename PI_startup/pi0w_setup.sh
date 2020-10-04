@@ -82,4 +82,5 @@ touch /root/logTempHumH2o
 	echo "    read_serial=ser.readline()"
 	echo "    print(read_serial)"
 )>/root/ACOM.py
+chmod --recursive g+rwx /root
 nohup python /root/PI_ACOM.py > /root/logTempHumH2o &

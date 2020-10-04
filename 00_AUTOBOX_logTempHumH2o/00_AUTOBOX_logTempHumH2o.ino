@@ -6,9 +6,9 @@
 SHT31 sht31 = SHT31();
 rgb_lcd lcd;
 // Vars
-const int colorR = 183;
-const int colorG = 37;
-const int colorB = 248;
+const int colorR = 0;
+const int colorG = 255;
+const int colorB = 0;
 int soilMoisturePin0 = A0;
 int soilMoisturePin1 = A1;
 int soilMoisturePin2 = A2;
@@ -49,7 +49,7 @@ void loop() {
     delay(1000);
     lcd.clear();
     soilMoistureValue2 = analogRead(soilMoisturePin2);
-    Serial.print("Plant3 = ");
+    Serial.print("\nPlant3 = ");
     Serial.print(soilMoistureValue2);
     delay(1000);
     // print temp&hum to lcd

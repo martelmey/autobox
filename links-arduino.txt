@@ -92,6 +92,9 @@ Grove Hardware {
         https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/
     SHT31
         https://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/
+    DHT22
+        https://create.arduino.cc/projecthub/pibots555/how-to-connect-dht11-sensor-with-arduino-uno-f4d239
+        https://wiki.seeedstudio.com/Grove-Temperature_and_Humidity_Sensor_Pro/
 }
 
 Other hardware {
