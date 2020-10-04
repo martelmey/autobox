@@ -25,15 +25,6 @@ apt upgrade
 apt install python-serial iptables-persistent
 pip install pyserial
 
-###ARDUINO_COMMUNICATION (ACOM.PY)
-(
-    echo "import serial"
-    echo "ser = serial.Serial('/dev/ttyACM0',9600)"
-    echo "while True:"
-	echo "    read_serial=ser.readline()"
-	echo "    print(read_serial)"
-)>/root/ACOM.py
-
 ###NET
 hostnamectl set-hostname AB-CHURCHWOOD
 iptables -P OUTPUT ACCEPT
@@ -82,6 +73,13 @@ chmod +x /opt/arduino-1.8.13/install.sh
 sudo ./opt/arduino-1.8.13/install.sh
 git clone https://github.com/martelmey/autobox.git
 
-###PI_ACOMM
-mkdir /root/autobox-log
-touch /root/autobox-log/logTempHumH2o
+###ARDUINO_COMMUNICATION (PI_ACOM.PY)
+touch /root/logTempHumH2o
+(
+    echo "import serial"
+    echo "ser = serial.Serial('/dev/ttyACM0',9600)"
+    echo "while True:"
+	echo "    read_serial=ser.readline()"
+	echo "    print(read_serial)"
+)>/root/ACOM.py
+nohup python /root/PI_ACOM.py > /root/logTempHumH2o &
