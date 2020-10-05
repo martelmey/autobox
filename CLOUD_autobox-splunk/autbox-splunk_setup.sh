@@ -49,11 +49,11 @@ splunk add index autobox \
 -coldPath /splunk-indexes/autobox/colddb \
 -thawedPath /splunk-indexes/autobox/thawedDb \
 -maxTotalDataSizeMB 20000
-splunk add index autobox-met \
--homePath /splunk-indexes/autobox-met/db \
--coldPath /splunk-indexes/autobox-met/colddb \
--thawedPath /splunk-indexes/autobox-met/thawedDb \
--maxTotalDataSizeMB 20000
+splunk add index os-evts \
+-homePath /splunk-indexes/os-evts/db \
+-coldPath /splunk-indexes/os-evts/colddb \
+-thawedPath /splunk-indexes/os-evts/thawedDb \
+-maxTotalDataSizeMB 10000
 ###apps&add-ons
 sudo tar -zxvf splunk-add-on-for-infrastructure_220 -C /opt/splunk/etc/apps
 sudo tar -zxvf splunk-app-for-infrastructure_220 -C /opt/splunk/etc/apps

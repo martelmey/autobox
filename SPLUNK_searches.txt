@@ -1,0 +1,10 @@
+index="autobox"
+| bin _time
+| stats avg(Hum) as Humidity, avg(Temp) as Temperature, avg(Plant1) as "Plant 1 Soil Moisture", avg(Plant2) as "Plant 2 Soil Moisture", avg(Plant3) as "Plant 3 Soil Moisture" by _time
+| eval s1="Hum Temp Plant1 Plant2 Plant3" | makemv s1 | mvexpand s1
+| eval yval=case(s1=="Hum",Hum,s1=="Temp",Temp,s1=="Plant1",Plant1,s1=="Plant2",Plant2,s1=="Plant3",Plant3)
+| eval series=":"+s1
+| xyseries _time,series,yval
+
+/(\d{2}:\d{2}:\d{2})/gm
+/(\w+\d{1} = \d{3})/gm
