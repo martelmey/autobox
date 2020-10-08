@@ -1,9 +1,11 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include "DHT.h"
+#include <stdint.h>
+#include <TFTv2.h>
+
 #define DHTPIN 2
 #define DHTTYPE DHT22
-
 DHT dht(DHTPIN, DHTTYPE);
 
 #if defined(ARDUINO_ARCH_AVR)
@@ -14,7 +16,7 @@ DHT dht(DHTPIN, DHTTYPE);
 #define SERIAL  Serial
 #endif
 
-int relay = 3;
+int relay = 40;
 
 void setup() {
     SERIAL.begin(500000); 
@@ -22,9 +24,16 @@ void setup() {
     Wire.begin();
     dht.begin();
     pinMode(relay, OUTPUT);
+    TFT_BL_ON;
+    Tft.TFTinit();
+    SERIAL.println("TFT init ....");
 }
 
 void loop() {
+  for (int r = 0; r < 115; r = r + 2) {
+    Tft.drawCircle(119, 160, r, random(0xFFFF));
+  }
+  delay(10);
   float temp_hum_val[2] = {0};
   if(!dht.readTempAndHumidity(temp_hum_val)){
     SERIAL.print("Humidity: "); 

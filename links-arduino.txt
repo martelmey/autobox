@@ -7,6 +7,8 @@ GUI {
         https://learn.adafruit.com/adafruit-gfx-graphics-library/overview
     Arduino Touchscreen Info
         https://dronebotworkshop.com/touchscreen-arduino/
+    Adafruit Graphics Test
+        https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2/graphics-test
 }
 
 RaspPi & Arduino {
@@ -83,6 +85,10 @@ Libs {
         https://github.com/olikraus/u8g2
     Grove LCD RGB Backlight
         https://github.com/SeeedDocument/Grove_LCD_RGB_Backlight
+    Adafruit Touch Screen
+        https://github.com/adafruit/Adafruit_TouchScreen
+    MCUFRIEND_kbv (touchscreens)
+        https://github.com/prenticedavid/MCUFRIEND_kbv
 }
 
 Grove Hardware {
@@ -95,6 +101,8 @@ Grove Hardware {
     DHT22
         https://create.arduino.cc/projecthub/pibots555/how-to-connect-dht11-sensor-with-arduino-uno-f4d239
         https://wiki.seeedstudio.com/Grove-Temperature_and_Humidity_Sensor_Pro/
+    2.8" TFT Touch Shield v.20
+        https://wiki.seeedstudio.com/2.8inch_TFT_Touch_Shield_v2.0/#compatible-boards
 }
 
 Other hardware {
@@ -102,6 +110,8 @@ Other hardware {
         http://vortexpowerfans.com/vtx-400
     Vicks humidifer
         https://www.vickshumidifiers.com/vicks/shop/humidifiers/vicks-mini-filter-free-cool-mist-humidifier
+    Digital Loggers IOT Relay
+        http://www.digital-loggers.com/iotfaqs.html
 }
 
 IoT Cxn {

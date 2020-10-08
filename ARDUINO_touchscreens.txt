@@ -1,0 +1,48 @@
+Seeed 2.8 TFT Touch Shield v2.0 {
+    Wiki
+        https://wiki.seeedstudio.com/2.8inch_TFT_Touch_Shield_v2.0/#features
+    Resistive
+    Screen Driver: ILI9341
+    Colors: 65k
+    Working Voltage: 5V
+    Resolution: 320x240
+    Driver: TFT Touch Shield v2.0
+    Pins {
+        D0 	NOT USED
+        D1 	NOT USED
+        D2 	NOT USED
+        D3 	NOT USED
+        D4 	TF_CS
+        D5 	TFT_CS
+        D6 	TFT_DC
+        D7 	BACKLIGHT(Selectable)
+        D8 	NOT USED
+        D9 	NOT USED
+        D10 NOT USED
+        D11 SPI_MOSI
+        D12 SPI_MISO
+        D13 SPI_SCK
+        A0 	TOUCH PANEL
+        A1 	TOUCH PANEL
+        A2 	TOUCH PANEL
+        A3 	TOUCH PANEL
+        A4 	NOT USED
+        A5 	NOT USED
+    }
+}
+
+3.5 TFT LCD Shield for Arduino {
+    Resistive
+    Screen Driver: ILI9486
+    Working Voltage: 5V/3.3V
+    Resolution: 480x320
+}
+
+Inventory {
+    * Adafruit-GFX
+    * Adafruit-BusIO
+    * Adafruit-TouchScreen
+    * Adafruit_ILI9341
+    * MCUFRIEND_kbv
+    * TFT Touch Shield V.20
+}
