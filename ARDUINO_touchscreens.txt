@@ -1,12 +1,13 @@
 Seeed 2.8 TFT Touch Shield v2.0 {
     Wiki
         https://wiki.seeedstudio.com/2.8inch_TFT_Touch_Shield_v2.0/#features
-    Resistive
-    Screen Driver: ILI9341
+        https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2/connecting
+    Resistive (4-wire)
+    Display Driver: Adafruit_ILI9341
+    Touch Driver: Adafruit_TouchScreen
     Colors: 65k
     Working Voltage: 5V
     Resolution: 320x240
-    Driver: TFT Touch Shield v2.0
     Pins {
         D0 	NOT USED
         D1 	NOT USED
@@ -29,13 +30,47 @@ Seeed 2.8 TFT Touch Shield v2.0 {
         A4 	NOT USED
         A5 	NOT USED
     }
+    GUISlice Config: ard-adagfx-ili9341-simple
+    Adafruit_ILI9341 graphicstest {
+        ILI9341 Test!
+        Display Power Mode: 0x0
+        MADCTL Mode: 0x0
+        Pixel Format: 0x0
+        Image Format: 0x0
+        Self Diagnostic: 0x0
+        Benchmark                Time (microseconds)
+        Screen fill              1497028
+        Text                     178440
+        Lines                    1472240
+        Horiz/Vert Lines         127288
+        Rectangles (outline)     84092
+        Rectangles (filled)      3108228
+        Circles (filled)         506016
+        Circles (outline)        630044
+        Triangles (outline)      324324
+        Triangles (filled)       1365748
+        Rounded rects (outline)  247904
+        Rounded rects (filled)   3137868
+        Done!
+    }
 }
 
 3.5 TFT LCD Shield for Arduino {
-    Resistive
-    Screen Driver: ILI9486
+    Resistive (4-wire)
+    Display Driver: ILI9486
+    Touch Driver: Adafruit_TouchScreen
+                  MCUFRIEND_kbv
     Working Voltage: 5V/3.3V
     Resolution: 480x320
+    GUISlice Config: ard-shld-generic1_35_touch
+    diagnose_TFT_support {
+        tft.readID() finds: ID = 0x9486
+        MCUFRIEND_kbv version: 2.9.9
+        PORTRAIT is 320 x 480
+    }
+    graphicstest_kbv {
+        ID = 0x9486
+    }
 }
 
 Inventory {
@@ -46,3 +81,5 @@ Inventory {
     * MCUFRIEND_kbv
     * TFT Touch Shield V.20
 }
+
+Libraries Dir: C:\Users\MXANA\Documents\Arduino\libraries

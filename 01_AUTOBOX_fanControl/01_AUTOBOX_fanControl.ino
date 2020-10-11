@@ -30,10 +30,12 @@ void setup() {
 }
 
 void loop() {
+  //Display
   for (int r = 0; r < 115; r = r + 2) {
     Tft.drawCircle(119, 160, r, random(0xFFFF));
   }
   delay(10);
+  //Temp&Hum
   float temp_hum_val[2] = {0};
   if(!dht.readTempAndHumidity(temp_hum_val)){
     SERIAL.print("Humidity: "); 
@@ -42,6 +44,7 @@ void loop() {
     SERIAL.print("Temperature: "); 
     SERIAL.print(temp_hum_val[1]);
     SERIAL.println(" *C");
+    //Relay
     if(temp_hum_val[1]>25.00){
       digitalWrite(relay,HIGH);
     }

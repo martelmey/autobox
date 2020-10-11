@@ -9,6 +9,10 @@ GUI {
         https://dronebotworkshop.com/touchscreen-arduino/
     Adafruit Graphics Test
         https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2/graphics-test
+    Configuring
+        https://github.com/ImpulseAdventure/GUIslice/wiki/Configuring-GUIslice
+    Configuring for Arduino
+        https://github.com/ImpulseAdventure/GUIslice/wiki/Configure-GUIslice-for-Arduino
 }
 
 RaspPi & Arduino {
