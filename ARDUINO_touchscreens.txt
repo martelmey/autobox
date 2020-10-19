@@ -1,3 +1,6 @@
+C:\Users\MXANA\Documents\Arduino\libraries\GUIslice\src\GUIslice_config.h
+C:\Users\MXANA\Documents\Arduino\libraries\GUIslice\configs\ard-shld-generic1_35_touch.h
+
 Seeed 2.8 TFT Touch Shield v2.0 {
     Wiki
         https://wiki.seeedstudio.com/2.8inch_TFT_Touch_Shield_v2.0/#features
@@ -71,6 +74,70 @@ Seeed 2.8 TFT Touch Shield v2.0 {
     graphicstest_kbv {
         ID = 0x9486
     }
+    ex01_ard_basic {
+        GUIslice version [0.15.0]:
+        - Init display handler [ADA_MCUFRIEND] OK
+        - Init touch handler [SIMPLE(Analog)] OK
+    }
+    diag_ard_touch_detect {
+        === Touch Pin Detection ===
+        Making all control and bus pins INPUT_PULLUP
+        Typical 30k Analog pullup with corresponding pin
+        would read low when digital is written LOW
+        e.g. reads ~25 for 300R X direction
+        e.g. reads ~30 for 500R Y direction
+        Starting detection:
+        Detected: (A2, D8) = 22
+        Detected: (A3, D9) = 30
+        Final detection: YP=A3 XM=A2 YM=9 XP=8
+        -----------------------------------------------
+        Recommended config settings:
+        - Please copy these values over any existing ADATOUCH_PIN_* settings in your config (SECTION 4A).
+        // Pinout for DRV_TOUCH_SIMPLE 4-wire resistive touchscreen
+        // (MCUFRIEND ID=0x9486)
+        #define ADATOUCH_PIN_YP   A3    // "Y+": Must be an analog pin
+        #define ADATOUCH_PIN_XM   A2    // "X-": Must be an analog pin
+        #define ADATOUCH_PIN_YM   9     // "Y-": Can be a digital pin
+        #define ADATOUCH_PIN_XP   8     // "X+": Can be a digital pin
+        -----------------------------------------------
+        Current config settings:
+        - YP=A3 XM=A2 YM=9 XP=8
+        -----------------------------------------------
+        Current config match recommendation? OK - No need to update config
+        -----------------------------------------------
+        GUIslice version [0.15.0]:
+        - Init display handler [ADA_MCUFRIEND] OK
+        - Init touch handler [SIMPLE(Analog)] OK
+    }
+    diag_ard_touch_calib {
+        - Init display handler [ADA_MCUFRIEND] OK
+        - Init touch handler [SIMPLE(Analog)] OK
+        === Touch Calibration ===
+        CALIB: Config defaults: XMin=136 XMax=900 YMin=942 YMax=139 RemapYX=0
+        - MCUFRIEND ID=0x9486 
+        CALIB: Averaging mode: BASIC
+        Capture TL: X=133 Y=946 Cnt=46, Z=(446..551)
+        Capture TR: X=885 Y=944 Cnt=43, Z=(408..453)
+        Capture BL: X=125 Y=108 Cnt=42, Z=(449..471)
+        Capture BR: X=888 Y=108 Cnt=37, Z=(409..433)
+        SegDetect: Normal display (FlipY)
+        CALIB: Result(adj) XMin=103 XMax=911 YMin=963 YMax=89
+        CALIB: Rotate
+        Capture TL (Rotated): X=886 Y=940 Cnt=26, Z=(431..504)
+        CALIB: Detected normal rotation
+        Recommended calibration settings are shown below.
+        - Copy and paste these lines into your GUIslice config file
+        over top of the existing ADATOUCH_X/Y_MIN/MAX settings.
+        ---
+        // DRV_TOUCH_ADA_SIMPLE [320x480]: (MCUFRIEND ID=0x9486) (XP=8,XM=56,YP=57,YM=9) 
+        #define ADATOUCH_X_MIN    103
+        #define ADATOUCH_X_MAX    911
+        #define ADATOUCH_Y_MIN    963
+        #define ADATOUCH_Y_MAX    89
+        #define ADATOUCH_REMAP_YX 0
+        ---
+        CALIB: Apply calibration
+    }    
 }
 
 Inventory {

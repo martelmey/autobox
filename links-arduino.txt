@@ -3,16 +3,20 @@ GUI {
         https://github.com/ImpulseAdventure/GUIslice
     GUISlice builder
         https://github.com/ImpulseAdventure/GUIslice-Builder
+    GUISlice Builder Walkthrough
+        https://github.com/ImpulseAdventure/GUIslice/wiki/Builder-_-Walkthrough
     Adafruit GFX Library
         https://learn.adafruit.com/adafruit-gfx-graphics-library/overview
     Arduino Touchscreen Info
         https://dronebotworkshop.com/touchscreen-arduino/
     Adafruit Graphics Test
         https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2/graphics-test
-    Configuring
+    Step 1) Configuring
         https://github.com/ImpulseAdventure/GUIslice/wiki/Configuring-GUIslice
-    Configuring for Arduino
+    Step 2) Configuring for Arduino
         https://github.com/ImpulseAdventure/GUIslice/wiki/Configure-GUIslice-for-Arduino
+    Step 3) Configuring Touch Support
+        https://github.com/ImpulseAdventure/GUIslice/wiki/Configure-Touch-Support
 }
 
 RaspPi & Arduino {

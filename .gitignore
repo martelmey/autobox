@@ -7,3 +7,6 @@
 *_ssh
 *_priv
 *_pub
+libs-pkgs/
+GUISlice/
+SPLUNK_apps/
